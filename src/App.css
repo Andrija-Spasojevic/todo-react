@@ -1,0 +1,284 @@
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: #f7fafd;
+}
+
+.todo-box {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px #2221;
+  padding: 32px 40px 36px 40px;
+  min-width: 350px;
+  max-width: 90vw;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: -2px;
+}
+
+form {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 28px;
+  justify-content: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 1px solid #eee;
+  border-radius: 6px 0 0 6px;
+  flex: 1;
+  outline: none;
+  min-width: 180px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #384c5f;
+  color: #fff;
+}
+
+ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+  gap: 10px;
+  transition: background 0.15s;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li span {
+  flex: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+li span:hover {
+  color: #384c5f;
+}
+
+li button {
+  margin-left: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+li button:hover {
+  background: #b60000;
+}
+.main-container.dark {
+  background: #191d23;
+}
+
+.main-container.dark .todo-box {
+  background: #242834;
+  box-shadow: 0 8px 32px #111b;
+}
+
+.main-container.dark h1 {
+  color: #fff;
+}
+
+.main-container.dark form {
+  background: transparent;
+}
+
+.main-container.dark input[type="text"] {
+  background: #353c4a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.main-container.dark button[type="submit"] {
+  background: #353c4a;
+  color: #fff;
+}
+
+.main-container.dark ul {
+  background: transparent;
+}
+
+.main-container.dark li {
+  border-bottom: 1px solid #333;
+  color: #fff;
+}
+
+.main-container.dark li span {
+  color: #fff !important;
+}
+
+.main-container.dark li span[style*="text-decoration: line-through"] {
+  color: #888 !important;
+}
+.main-container.dark li button {
+  background: #b60000;
+}
+
+.toggle-mode {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: bold;
+  float: right;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.main-container.dark .toggle-mode {
+  color: #ffecb3;
+}
+
+/* ... tvoj postojeći kod ostaje ... */
+
+.empty-list-text {
+  color: #888;
+  text-align: center;
+}
+
+/* EDIT INPUT */
+.edit-input {
+  flex: 1;
+  padding: 7px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* TASK TEKST */
+.task-text {
+  flex: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 1.1rem;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #aaa !important;
+}
+
+/* Dugme za edit */
+.edit-btn {
+  margin-right: 8px;
+  background: #ffc107;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.edit-btn:hover {
+  background: #e0a800;
+}
+
+/* Dugme za delete */
+.delete-btn {
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.delete-btn:hover {
+  background: #b60000;
+}
+
+/* Dok je task u editovanju */
+li.editing {
+  background: #f3f3f3;
+}
+
+/* DARK MODE dopune */
+.main-container.dark .empty-list-text {
+  color: #888;
+}
+.main-container.dark .edit-input {
+  background: #353c4a;
+  color: #fff;
+  border: 1px solid #444;
+}
+.main-container.dark .task-text {
+  color: #fff !important;
+}
+.main-container.dark .task-text.completed {
+  color: #888 !important;
+}
+.main-container.dark .edit-btn {
+  background: #f7c948;
+  color: #222;
+}
+.main-container.dark .edit-btn:hover {
+  background: #e0a800;
+}
+.main-container.dark .delete-btn {
+  background: #b60000;
+}
+.main-container.dark li.editing {
+  background: #292d38;
+}
+.dragging {
+  background: #ddebf6 !important;
+  box-shadow: 0 4px 18px #24314b33;
+}
+.main-container.dark .dragging {
+  background: #303b4b !important;
+}
