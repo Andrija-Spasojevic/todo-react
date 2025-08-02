@@ -15,13 +15,26 @@ function App() {
     return saved ? JSON.parse(saved) : false;
   });
 
+  // Čuva darkMode u localStorage
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
+  // Čuva taskove u localStorage
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
+
+  // **KLJUČNO: menja klasu na body i html za dark mode**
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   const handleAddTask = (e) => {
     e.preventDefault();

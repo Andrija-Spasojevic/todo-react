@@ -1,23 +1,30 @@
-body,
-html {
+html,
+body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #f7fafd;
 }
 
+body.dark,
+html.dark {
+  background: #191d23 !important;
+}
+
+/* === Glavni okvir === */
 .main-container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
   min-height: 100vh;
   min-width: 100vw;
-  background: #f7fafd;
+  /* background: #f7fafd;  <-- sklonjeno, sada je na body/html */
 }
 
+/* === Kutija aplikacije === */
 .todo-box {
   background: #fff;
   border-radius: 14px;
@@ -27,6 +34,7 @@ html {
   max-width: 90vw;
 }
 
+/* === Naslov === */
 h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -36,6 +44,7 @@ h1 {
   letter-spacing: -2px;
 }
 
+/* === Forma === */
 form {
   display: flex;
   gap: 6px;
@@ -69,6 +78,7 @@ button[type="submit"]:hover {
   color: #fff;
 }
 
+/* === Lista === */
 ul {
   width: 100%;
   margin: 0;
@@ -116,8 +126,10 @@ li button {
 li button:hover {
   background: #b60000;
 }
+
+/* === DARK MODE === */
 .main-container.dark {
-  background: #191d23;
+  /* više nije potreban background ovde */
 }
 
 .main-container.dark .todo-box {
@@ -180,14 +192,13 @@ li button:hover {
   color: #ffecb3;
 }
 
-/* ... tvoj postojeći kod ostaje ... */
-
+/* === Prazna lista === */
 .empty-list-text {
   color: #888;
   text-align: center;
 }
 
-/* EDIT INPUT */
+/* === Edit input === */
 .edit-input {
   flex: 1;
   padding: 7px;
@@ -196,7 +207,7 @@ li button:hover {
   border: 1px solid #ccc;
 }
 
-/* TASK TEKST */
+/* === Task tekst === */
 .task-text {
   flex: 1;
   cursor: pointer;
@@ -209,7 +220,7 @@ li button:hover {
   color: #aaa !important;
 }
 
-/* Dugme za edit */
+/* === Dugme za edit === */
 .edit-btn {
   margin-right: 8px;
   background: #ffc107;
@@ -226,7 +237,7 @@ li button:hover {
   background: #e0a800;
 }
 
-/* Dugme za delete */
+/* === Dugme za delete === */
 .delete-btn {
   background: #ff4444;
   color: white;
@@ -242,12 +253,12 @@ li button:hover {
   background: #b60000;
 }
 
-/* Dok je task u editovanju */
+/* === Dok je task u editovanju === */
 li.editing {
   background: #f3f3f3;
 }
 
-/* DARK MODE dopune */
+/* === DARK MODE dopune === */
 .main-container.dark .empty-list-text {
   color: #888;
 }
